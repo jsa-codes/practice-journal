@@ -21,9 +21,9 @@ export const NavBar = ({ token, setToken }) => {
 
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={showMobileNavbar} ref={hamburger}>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
+          <span aria-hidden="true">Comments</span>
+          <span aria-hidden="true">Practice Journal Entries</span>
+          <span aria-hidden="true">Instructor</span>
         </a>
       </div>
 

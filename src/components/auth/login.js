@@ -38,6 +38,8 @@ export const Login = () => {
         <form className="form--login" onSubmit={handleLogin}>
           <h1>Practice Journal</h1>
           <h2>Please sign in</h2>
+          <div>Music is a journey. So, why not start treating it like one?</div>
+
           <fieldset>
             <label htmlFor="inputEmail"> Email</label>
             <input ref={username} type="email" id="email" className="form-control" placeholder="Email address" required autoFocus />
