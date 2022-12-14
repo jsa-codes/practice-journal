@@ -1,5 +1,5 @@
-export const getAllInstructors = () => {
-  return fetch("http://localhost:8000/practicejournalusers", {
+export const getInstructors = () => {
+  return fetch("http://localhost:8000/instructors", {
     headers: {
       "Authorization": `Token ${localStorage.getItem("auth_token")}`
     }
