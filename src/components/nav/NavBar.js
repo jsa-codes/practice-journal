@@ -16,7 +16,7 @@ export const NavBar = ({ token, setToken }) => {
     <nav className="navbar is-success mb-3" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a className="navbar-item" href="/">
-          <img src="google.com" height="3rem" alt=" " /> <h1 className="title is-4">Practice Journal</h1>
+          <img src="http://google.com" height="3rem" alt=" " /> <h1 className="title is-4">Practice Journal</h1>
         </a>
 
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
