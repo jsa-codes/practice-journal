@@ -1,5 +1,5 @@
 import React, { useRef } from "react"
-import { Link, useNavigate, useState } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { registerUser } from "../managers/AuthManager"
 import "./Auth.css"
 
