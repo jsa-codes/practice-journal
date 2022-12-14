@@ -1,5 +1,5 @@
 export const getAllUsers = () => {
-  return fetch("http://localhost:8000/practicejournalusers", {
+  return fetch("http://localhost:8000/users", {
     headers: {
       "Authorization": `Token ${localStorage.getItem("auth_token")}`
     }
@@ -8,7 +8,7 @@ export const getAllUsers = () => {
 }
 
 export const getUserById = (id) => {
-  return fetch(`http://localhost:8000/practicejournalusers/${id}`, {
+  return fetch(`http://localhost:8000/users/${id}`, {
     headers: {
       "Authorization": `Token ${localStorage.getItem("auth_token")}`
     }
@@ -27,7 +27,7 @@ export const addUser = user => {
 }
 
 export const updateUser = user => {
-  return fetch(`http://localhost:8000/practicejournalusers/${user.id}`, {
+  return fetch(`http://localhost:8000/users/${user.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
