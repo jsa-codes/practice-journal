@@ -1,3 +1,3 @@
 export const InstructorProfile = () => {
-    return <></>
+    return <h2>Instructor Profile</h2>
 }
