@@ -1,69 +1,67 @@
-import { useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import "./NavBar.css"
-
-export const NavBar = ({ token, setToken }) => {
+// import Logo from "/Users/jeremymyers/workspace/level-up-CLIENT/level-up-react-CLIENT/src/logo192.png"
+// import "./NavBar.css"
+export const NavBar = () => {
   const navigate = useNavigate()
-  const navbar = useRef()
-  const hamburger = useRef()
-
-  const showMobileNavbar = () => {
-    hamburger.current.classList.toggle('is-active')
-    navbar.current.classList.toggle('is-active')
-  }
-
   return (
-    <nav className="navbar is-success mb-3" role="navigation" aria-label="main navigation">
+    <nav className="navbar has-shadow is-warning mb-5" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a className="navbar-item" href="/">
-          <img src="http://google.com" height="3rem" alt=" " /> <h1 className="title is-4">Practice Journal</h1>
+          {/* <img src={Logo} height="3rem" alt="React Logo" /> <h1 className="title is-4 ml-3">Level UP</h1> */}
         </a>
-
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={showMobileNavbar} ref={hamburger}>
+        <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" id="burger">
           <span aria-hidden="true"></span>
-          <span aria-hidden="true">  </span>
+          <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
-
-      <div className="navbar-menu" ref={navbar}>
-        <div className="navbar-start">
+      <div className="navbar-end nav-links">
+        <div className="navbar-menu is">
           {
-            token
-              ?
+            (localStorage.getItem("pj_token") !== null) ?
+              <div>
+                <ul className="navbar-item">
+                  <div className="navbar-item">
+                    <ul className="navbar__item">
+                      <Link to="/students">Students</Link>
+                    </ul>
+                  </div>
+
+                </ul>
+              </div>
+              : <></>
+          }
+          {
+            (localStorage.getItem("pj_token") !== null) ?
+              <ul className="navbar-item">
+                <button className="nav-link fakeLink is-link"
+                  onClick={() => {
+                    localStorage.removeItem("pj_token");
+                    localStorage.removeItem("is_staff")
+                    navigate('/login')
+                  }}
+                >Logout</button>
+              </ul> :
               <>
-                <Link to="/journalentryform" className="navbar-item">Create Practice Journal Entry</Link>
-                <Link to="/alljournalentries" className="navbar-item">All Journal Entries</Link>
-                <Link to="/myjournalentries" className="navbar-item">My Practice Journal Entries</Link>
-                <Link to="/comments" className="navbar-item">Comments</Link>
-                <Link to="/instructors" className="navbar-item">Instructor Profiles</Link>
+                {/* <div>
+                  <div className="navbar-item">
+                    <div className="navbar-item">
+                      <ul className="nav-item">
+                        <Link className="nav-link is-link" to="/login">Login</Link>
+                      </ul>
+                    </div>
+                    <div className="navbar-item">
+                      <ul className="nav-item">
+                        <Link className="nav-link is-link" to="/register">Register</Link>
+                      </ul>
+                    </div>
+                  </div>
+                </div> */}
               </>
-              :
-              ""
           }
         </div>
-
-        <div className="navbar-end">
-          <div className="navbar-item">
-            <div className="buttons">
-              {
-                token
-                  ?
-                  <button className="button is-outlined" onClick={() => {
-                    setToken('')
-                    navigate('/login')
-                  }}>Logout</button>
-                  :
-                  <>
-                    <Link to="/register" className="button is-link">Register</Link>
-                    <Link to="/login" className="button is-outlined">Login</Link>
-                  </>
-              }
-            </div>
-          </div>
-        </div>
       </div>
-    </nav>
+    </nav >
   )
 }

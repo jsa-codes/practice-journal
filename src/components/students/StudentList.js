@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { getStudents } from '../managers/StudentManager'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 
 export const StudentList = () => {
 
     const [students, setStudents] = useState([])
+    const { studentId } = useParams()
 
     useEffect(
         () => {
@@ -16,16 +17,16 @@ export const StudentList = () => {
     )
 
     return <>
-        <h2>Students</h2>
+        <h2>Current Students</h2>
 
         <div className='students'>
             {
                 students.map((student) => {
-                    return <ul>
-                        <div className='student' key={student.id}>
-                            <Link to={`/students/${student.id}`}>{student.fullName}</Link>
+                    return <div key={student.id}>
+                        <div className='student' >
+                            <Link to={`/students/${studentId}`}>{student.full_name}</Link>
                         </div>
-                    </ul>
+                    </div>
                 }
                 )
             }

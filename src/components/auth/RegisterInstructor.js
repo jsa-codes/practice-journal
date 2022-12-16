@@ -7,6 +7,10 @@ export const RegisterInstructor = () => {
     const firstName = useRef()
     const lastName = useRef()
     const username = useRef()
+    const age = useRef()
+    const yearsPlaying = useRef()
+    const location = useRef()
+    const bio = useRef()
     const email = useRef()
     const password = useRef()
     const verifyPassword = useRef()
@@ -20,10 +24,14 @@ export const RegisterInstructor = () => {
         if (password.current.value === verifyPassword.current.value) {
             const newInstructor = {
                 "account_type": "instructor",
-                "username": username.current.value,
                 "is_staff": true,
+                "username": username.current.value,
                 "first_name": firstName.current.value,
                 "last_name": lastName.current.value,
+                "age": age.current.value,
+                "yearsPlaying": yearsPlaying.current.value,
+                "location": location.current.value,
+                "bio": bio.current.value,
                 "email": email.current.value,
                 "password": password.current.value
             }
@@ -59,6 +67,22 @@ export const RegisterInstructor = () => {
                     <input ref={lastName} type="text" name="lastName" className="form-control" placeholder="Last name" required />
                 </fieldset>
                 <fieldset>
+                    <label htmlFor="age"> Age </label>
+                    <input ref={age} type="text" name="age" className="form-control" placeholder="Age" required />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="yearsPlaying"> Years Playing </label>
+                    <input ref={yearsPlaying} type="number" name="yearsPlaying" className="form-control" placeholder="Years Playing" required />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="bio"> Bio </label>
+                    <input ref={bio} type="text" name="bio" className="form-control" placeholder="Bio" required />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="location"> Location </label>
+                    <input ref={location} type="text" name="location" className="form-control" placeholder="Location" required />
+                </fieldset>
+                <fieldset>
                     <label htmlFor="inputUsername">Username</label>
                     <input ref={username} type="text" name="username" className="form-control" placeholder="Username" required />
                 </fieldset>
@@ -83,6 +107,9 @@ export const RegisterInstructor = () => {
             </form>
             <section className="link--register">
                 Already registered? <Link to="/login">Login</Link>
+            </section>
+            <section className="link--register">
+                Not an Instructor? Students Register here <Link to="/register-student">Student Registration</Link>
             </section>
         </main>
     )

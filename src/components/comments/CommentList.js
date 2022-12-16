@@ -1,3 +1,3 @@
 export const CommentList = () => {
-  return <></>
+  return <h2>Comments</h2>
 }

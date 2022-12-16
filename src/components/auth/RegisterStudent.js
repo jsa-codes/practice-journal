@@ -103,7 +103,7 @@ export const RegisterStudent = () => {
                 </fieldset>
             </form>
             <section className="link--register">
-                Already registered? <Link to="/login">Login</Link>
+                Not an Student? Instructors Register here <Link to="/register-instructor">Instructor Registration</Link>
             </section>
         </main>
     )
