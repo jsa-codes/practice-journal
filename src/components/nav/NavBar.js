@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link, useNavigate } from "react-router-dom"
 // import Logo from "/Users/jeremymyers/workspace/level-up-CLIENT/level-up-react-CLIENT/src/logo192.png"
 // import "./NavBar.css"
