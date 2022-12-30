@@ -1,22 +1,59 @@
-import { Route, Routes } from "react-router-dom"
-import { Login } from "../auth/Login"
+import { Authorized } from '../views/Authorized'
+import { Route, Routes } from 'react-router-dom'
+import { HomeContainer } from '../home/HomeContainer'
+// LOGIN
+import { Login } from '../auth/Login'
+import { About } from '../about/About'
+import { LandingPage } from '../home/LandingPage'
+// INSTRUCTOR
+import { Instructor } from '../instructors/Instructor'
+import { InstructorList } from '../instructors/InstructorList'
+import { InstructorDashboard } from '../instructors/InstructorDashboard'
+import { InstructorProfileForm } from '../instructors/InstructorProfileForm'
+// STUDENT
+import { Student } from '../students/Student'
+import { StudentList } from '../students/StudentList'
+import { StudentDashboard } from '../students/StudentDashboard'
+import { StudentProfileForm } from '../students/StudentProfileForm'
+import { StudentProfileEdit } from '../students/StudentProfileEdit'
+// REGISTER
 import { RegisterInstructor } from '../auth/RegisterInstructor'
 import { RegisterStudent } from '../auth/RegisterStudent'
-import { StudentProfile } from '../students/StudentProfile'
-import { Authorized } from "./Authorized"
-
+// COMMENT
+import { CommentList } from '../comments/CommentList'
+import { CommentForm } from '../comments/CommentForm'
+// JOURNAL ENTRY
+import { JournalEntryForm } from '../journalentries/JournalEntryForm'
+import { JournalEntryList } from '../journalentries/JournalEntryList'
 
 export const ApplicationViews = () => {
-  return <>
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/registerinstructor" element={<RegisterInstructor />} />
-      <Route path="/registerstudent" element={<RegisterStudent />} />
-      <Route path="/student/:studentId" element={<StudentProfile />} />
+    return <>
+        <Routes>
+            <Route path='/' element={<HomeContainer />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/registerstudent' element={<RegisterStudent />} />
+            <Route path='/registerinstructor' element={<RegisterInstructor />} />
+            <Route path='/landingPage' element={<LandingPage />} />
 
-      {/* Route for Authenticated Users that are either Students OR Instructors */}
-      <Route path="/*" element={<Authorized />} />
+            <Route element={<Authorized />}>
+                <Route path="/students" element={<StudentList />} />
+                <Route path="/students/:studentId" element={<Student />} />
+                <Route path="/students/:studentId/profile" element={<StudentProfileForm />} />
+                <Route path="/studentDashboard" element={<StudentDashboard />} />
+                <Route path="/instructorDashboard" element={<InstructorDashboard />} />
+                <Route path="/instructors" element={<InstructorList />} />
+                <Route path="/instructors/:instructorId" element={<Instructor />} />
+                <Route path="/instructors/:instructorId/profile" element={<InstructorProfileForm />} />
+                <Route path="/comments" element={<CommentList />} />
+                <Route path="/commentForm" element={<CommentForm />} />
+                <Route path="/journalEntryForm" element={<JournalEntryForm />} />
+                <Route path="/journalEntries" element={<JournalEntryList />} />
+                <Route path="/studentProfileEdit" element={<StudentProfileEdit />} />
 
-    </Routes>
-  </>
+            </Route>
+        </Routes>
+    </>
 }
+
+

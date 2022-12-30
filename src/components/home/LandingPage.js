@@ -8,8 +8,8 @@ export const LandingPage = () => {
         <>
             <h1>Practice Journal</h1>
             <div className="landingPage">
-                <button className="button" onClick={() => navigate("/instructors")}>Instructors</button>
-                <button className="button" onClick={() => navigate("/students")}>Students</button>
+                <button className="button" onClick={() => navigate("/")}>Instructors</button>
+                <button className="button" onClick={() => navigate("/")}>Students</button>
             </div>
         </>
     )

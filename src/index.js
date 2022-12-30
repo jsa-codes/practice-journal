@@ -1,15 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from "react-dom/client"
+import "./index.css"
 import { BrowserRouter } from "react-router-dom"
-import { PracticeJournal } from './components/PracticeJournal';
-import './index.css';
+import { PracticeJournal } from './PracticeJournal'
 
-const root = ReactDOM.createRoot(document.getElementById("root"))
+const container = document.getElementById("root")
+const root = createRoot(container)
 root.render(
-  <>
-    <BrowserRouter>
-      <PracticeJournal />
-    </BrowserRouter>
-  </>
-);
+  <BrowserRouter>
+    <PracticeJournal />
+  </BrowserRouter>
+)
 

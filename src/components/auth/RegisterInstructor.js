@@ -29,7 +29,7 @@ export const RegisterInstructor = () => {
                 "first_name": firstName.current.value,
                 "last_name": lastName.current.value,
                 "age": age.current.value,
-                "yearsPlaying": yearsPlaying.current.value,
+                "years_playing": yearsPlaying.current.value,
                 "location": location.current.value,
                 "bio": bio.current.value,
                 "email": email.current.value,
@@ -105,11 +105,11 @@ export const RegisterInstructor = () => {
                     <button className="btn btn-1 btn-sep icon-send" type="submit">Register as an Instructor</button>
                 </fieldset>
             </form>
-            <section className="link--register">
+            <section className="link--login">
                 Already registered? <Link to="/login">Login</Link>
             </section>
-            <section className="link--register">
-                Not an Instructor? Students Register here <Link to="/register-student">Student Registration</Link>
+            <section className="link--registerstudent">
+                Not an Instructor? Students Register here <Link to="/registerstudent">Student Registration</Link>
             </section>
         </main>
     )

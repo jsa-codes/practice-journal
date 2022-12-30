@@ -1,3 +1,3 @@
 export const JournalEntryList = () => {
-  return <></>
+  return <>Journal Entry List Page</>
 }

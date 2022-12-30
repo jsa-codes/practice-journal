@@ -1,7 +1,9 @@
 export const getInstructors = () => {
   return fetch("http://localhost:8000/instructors", {
     headers: {
-      "Authorization": `Token ${localStorage.getItem("auth_token")}`
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+      "Authorization": `Token ${localStorage.getItem("pj_token")}`
     }
   })
     .then(res => res.json())
@@ -10,7 +12,7 @@ export const getInstructors = () => {
 export const getInstructorById = (id) => {
   return fetch(`http://localhost:8000/instructors/${id}`, {
     headers: {
-      "Authorization": `Token ${localStorage.getItem("auth_token")}`
+      "Authorization": `Token ${localStorage.getItem("pj_token")}`
     }
   })
     .then(res => res.json())
@@ -31,7 +33,7 @@ export const updateInstructor = instructor => {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Token ${localStorage.getItem("auth_token")}`
+      "Authorization": `Token ${localStorage.getItem("pj_token")}`
     },
     body: JSON.stringify(instructor)
   })

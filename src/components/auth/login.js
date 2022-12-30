@@ -5,6 +5,9 @@ import "./Auth.css"
 
 
 export const Login = () => {
+
+  // const [email, set] = useState()
+
   const username = useRef()
   const password = useRef()
   const invalidDialog = useRef()
@@ -12,10 +15,12 @@ export const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault()
+
     const user = {
       username: username.current.value,
       password: password.current.value
     }
+
     loginUser(user)
       .then(res => {
         if ("valid" in res && res.valid && "token" in res) {
@@ -27,6 +32,7 @@ export const Login = () => {
           invalidDialog.current.showModal()
         }
       })
+
   }
 
   return (
@@ -39,15 +45,15 @@ export const Login = () => {
         <form className="form--login" onSubmit={handleLogin}>
           <h1>Practice Journal</h1>
           <h2>Please sign in</h2>
-          <div>Music is a journey. So, why not start treating it like one?</div>
+          <h3>Music is a journey. So, why not start treating it like one?</h3>
 
           <fieldset>
-            <label htmlFor="inputEmail"> Username</label>
-            <input ref={username} type="username" id="username" className="form-control" placeholder="Username" required autoFocus />
+            <label htmlFor="inputUsername"> Username</label>
+            <input ref={username} type="username" id="username" className="form-control" placeholder="username" required autoFocus />
           </fieldset>
           <fieldset>
             <label htmlFor="inputPassword"> Password </label>
-            <input ref={password} type="password" id="password" className="form-control" placeholder="Password" required />
+            <input ref={password} type="password" id="password" className="form-control" placeholder="password" required />
           </fieldset>
           <fieldset style={{
             textAlign: "center"
@@ -56,11 +62,11 @@ export const Login = () => {
           </fieldset>
         </form>
       </section>
-      <section className="link--register">
+      <section className="link--registerstudent">
         <div>Not a Member yet?</div>
         <Link to="/registerstudent">Create Your Student Profile</Link>
       </section>
-      <section className="link--register">
+      <section className="link--registerinstructor">
         <Link to="/registerinstructor">Create an Instructor Profile</Link>
       </section>
     </main>

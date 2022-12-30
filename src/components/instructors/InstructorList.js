@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { getInstructors } from '../managers/InstructorManager'
+import { Instructor } from './Instructor'
 
 
 export const InstructorList = () => {
@@ -10,22 +10,24 @@ export const InstructorList = () => {
     useEffect(
         () => {
             getInstructors()
-                .then(setInstructors)
+                .then(data => setInstructors(data))
         },
         []
     )
 
     return <>
-        <h2>Instructors</h2>
+        <h2>Current Instructors</h2>
 
         <div className='instructors'>
             {
-                instructors.map((instructor) => {
-                    return <ul>
-                        <div className='instructor' key={instructor.id}>
-                            <Link to={`/instructors/${instructor.id}`}>{instructor.fullName}</Link>
-                        </div>
-                    </ul>
+                instructors.map(instructor => {
+                    return <div key={instructor.id}>
+                        <Instructor key={`instructor--${instructor.id}`}
+                            id={instructor.id}
+                            full_name={instructor.full_name}
+                            age={instructor.age}
+                        />
+                    </div>
                 }
                 )
             }

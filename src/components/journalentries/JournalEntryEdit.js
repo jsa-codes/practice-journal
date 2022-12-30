@@ -1,3 +1,3 @@
 export const JournalEntryEdit = () => {
-  return <></>
+  return <>Journal Entry Edit</>
 }

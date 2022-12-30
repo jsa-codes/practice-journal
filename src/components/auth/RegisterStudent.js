@@ -8,10 +8,10 @@ export const RegisterStudent = () => {
 
     const firstName = useRef()
     const lastName = useRef()
+    const username = useRef()
     const age = useRef()
     const yearsPlaying = useRef()
     const style = useRef()
-    const username = useRef()
     const email = useRef()
     const password = useRef()
     const verifyPassword = useRef()
@@ -25,8 +25,8 @@ export const RegisterStudent = () => {
         if (password.current.value === verifyPassword.current.value) {
             const newStudent = {
                 "account_type": "student",
-                "username": username.current.value,
                 "is_staff": false,
+                "username": username.current.value,
                 "first_name": firstName.current.value,
                 "last_name": lastName.current.value,
                 "age": age.current.value,
@@ -103,7 +103,7 @@ export const RegisterStudent = () => {
                 </fieldset>
             </form>
             <section className="link--register">
-                Not an Student? Instructors Register here <Link to="/register-instructor">Instructor Registration</Link>
+                Not an Student? Instructors Register here <Link to="/registerinstructor">Instructor Registration</Link>
             </section>
         </main>
     )
