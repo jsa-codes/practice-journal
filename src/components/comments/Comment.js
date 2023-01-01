@@ -1,11 +1,18 @@
+import "./Comment.css"
+
 export const Comment = ({ id, description, user }) => {
   return (
-    <section className="comment">
-      <div>
-        <div to={`/comments/${id}`}>Student: {user.first_name}</div>
-        <div to={`/comments/${id}`}>Description: {description}</div>
+    <section className='comment__section' key={`comment--${id}`}>
+      <div className='card'>
+        <div className="comment">
+          <h4>Name: {user.first_name}</h4>
+          <p>Description: {description}</p>
+          <button className='button-52'
+          >Respond</button>
+        </div>
       </div>
-
     </section>
   )
 }
+
+

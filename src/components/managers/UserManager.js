@@ -1,6 +1,8 @@
 export const getAllUsers = () => {
   return fetch("http://localhost:8000/users", {
     headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
       "Authorization": `Token ${localStorage.getItem("pj_token")}`
     }
   })
@@ -10,13 +12,26 @@ export const getAllUsers = () => {
 export const getUserById = (id) => {
   return fetch(`http://localhost:8000/users/${id}`, {
     headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
       "Authorization": `Token ${localStorage.getItem("pj_token")}`
     }
   })
     .then(res => res.json())
 }
 
-export const addUser = user => {
+export const getCurrentUser = () => {
+  return fetch(`http://localhost:8000/users/current`, {
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+      "Authorization": `Token ${localStorage.getItem("pj_token")}`
+    }
+  })
+    .then(res => res.json())
+}
+
+export const addUser = (user) => {
   return fetch("http://localhost:8000/users", {
     method: "POST",
     headers: {
@@ -28,7 +43,7 @@ export const addUser = user => {
   })
 }
 
-export const updateUser = user => {
+export const updateUser = (user) => {
   return fetch(`http://localhost:8000/users/${user.id}`, {
     method: "PUT",
     headers: {

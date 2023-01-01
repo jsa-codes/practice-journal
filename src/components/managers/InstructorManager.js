@@ -9,7 +9,7 @@ export const getInstructors = () => {
     .then(res => res.json())
 }
 
-export const getInstructorById = (id) => {
+export const getSingleInstructor = (id) => {
   return fetch(`http://localhost:8000/instructors/${id}`, {
     headers: {
       "Authorization": `Token ${localStorage.getItem("pj_token")}`
@@ -22,7 +22,9 @@ export const addInstructor = instructor => {
   return fetch("http://localhost:8000/instructors", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "Authorization": `Token ${localStorage.getItem("pj_token")}`
+
     },
     body: JSON.stringify(instructor)
   })
@@ -39,8 +41,13 @@ export const updateInstructor = instructor => {
   })
 }
 
-export const deleteInstructor = (instructorId) => {
-  return fetch(`http://localhost:8000/instructors/${instructorId}`, {
+export const deleteInstructor = (id) => {
+  return fetch(`http://localhost:8000/instructors/${id}`, {
     method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+      "Authorization": `Token ${localStorage.getItem("pj_token")}`
+    }
   })
 }

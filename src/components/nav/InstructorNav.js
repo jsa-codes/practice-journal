@@ -7,17 +7,17 @@ export const InstructorNav = () => {
         <ul>
             {
                 <li>
-                    <Link to="/students">Students</Link>
+                    <Link to="/students">My Students</Link>
                 </li>
             }
             {
                 <li>
-                    <Link to="/profile">Profile</Link>
+                    <Link to="/instructors/instructorId">Profile</Link>
                 </li>
             }
             {
                 <li>
-                    <Link to="/comments">New Comments</Link>
+                    <Link to="/comments">Comments</Link>
                 </li>
             }
             {

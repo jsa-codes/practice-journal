@@ -1,0 +1,57 @@
+.container--login {
+    margin-bottom: 1.6rem;
+}
+
+.form--header {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.form__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form--login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.6rem;
+    /* border: 1px solid #a2a2a2; */
+    border-radius: 4px;
+    box-shadow: 0 0 15px #d7d6d6;
+    margin-bottom: 1.6rem;
+    margin-top: 2rem;
+    max-width: 700px;
+}
+
+.form--fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.6rem;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.6rem;
+}
+
+.link--registerinstructor {
+    margin-bottom: 1rem;
+}
+
+.register--link:hover {
+    text-decoration: none;
+    flex-basis: 20%;
+    list-style-type: none;
+    color: tomato;
+}
+

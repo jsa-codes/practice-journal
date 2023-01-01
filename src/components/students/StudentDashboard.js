@@ -1,9 +1,11 @@
 import { CommentList } from '../comments/CommentList'
-import { InstructorList } from '../instructors/InstructorList'
+import { SelectInstructor } from '../instructors/SelectInstructor'
+import { JournalEntryList } from '../journalentries/JournalEntryList'
 
 export const StudentDashboard = () => {
     return <>
-        <InstructorList />
+        <SelectInstructor />
         <CommentList />
+        <JournalEntryList />
     </>
 }

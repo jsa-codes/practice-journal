@@ -2,6 +2,7 @@ import React, { useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { loginUser } from "../managers/AuthManager"
 import "./Auth.css"
+import "./Login.css"
 
 
 export const Login = () => {
@@ -41,33 +42,33 @@ export const Login = () => {
         <div>Email or password was not valid.</div>
         <button className="button--close" onClick={e => invalidDialog.current.close()}>Close</button>
       </dialog>
-      <section>
+      <section className='form__section'>
         <form className="form--login" onSubmit={handleLogin}>
-          <h1>Practice Journal</h1>
+          <h1 className='form--header'>Practice Journal</h1>
           <h2>Please sign in</h2>
           <h3>Music is a journey. So, why not start treating it like one?</h3>
 
-          <fieldset>
-            <label htmlFor="inputUsername"> Username</label>
+          <fieldset className='form--fieldset'>
+            <label htmlFor="inputUsername"></label>
             <input ref={username} type="username" id="username" className="form-control" placeholder="username" required autoFocus />
           </fieldset>
-          <fieldset>
-            <label htmlFor="inputPassword"> Password </label>
+          <fieldset className='form--fieldset'>
+            <label htmlFor="inputPassword"></label>
             <input ref={password} type="password" id="password" className="form-control" placeholder="password" required />
           </fieldset>
           <fieldset style={{
             textAlign: "center"
           }}>
-            <button className="btn btn-1 btn-sep icon-send" type="submit">Sign In</button>
+            <button className="btn button-52 btn-sep icon-send" type="submit">Sign In</button>
           </fieldset>
         </form>
       </section>
       <section className="link--registerstudent">
         <div>Not a Member yet?</div>
-        <Link to="/registerstudent">Create Your Student Profile</Link>
+        <Link className="register--link" to="/registerstudent">Create Your Student Profile</Link>
       </section>
       <section className="link--registerinstructor">
-        <Link to="/registerinstructor">Create an Instructor Profile</Link>
+        <Link className="register--link" to="/registerinstructor">Create an Instructor Profile</Link>
       </section>
     </main>
   )

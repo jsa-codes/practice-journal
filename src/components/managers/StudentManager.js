@@ -22,15 +22,17 @@ export const getSingleStudent = (id) => {
 }
 
 export const updateStudent = (student) => {
-    return fetch(`http://localhost:8000/students/${student}`, {
+    console.log(student);
+    return fetch(`http://localhost:8000/students/${student.id}`, {
         method: "PUT",
         headers: {
             'Accept': 'application/json',
             "Content-Type": "application/json",
-            "Authorization": `Token ${'pj_token'}`
+            "Authorization": `Token ${localStorage.getItem("pj_token")}`
         },
         body: JSON.stringify(student)
     })
+        .then(res => res.json())
 }
 
 export const deleteStudent = (id) => {
