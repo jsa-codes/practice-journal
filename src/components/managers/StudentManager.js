@@ -1,4 +1,4 @@
-export const getStudents = () => {
+export const getAllStudents = () => {
     return fetch("http://localhost:8000/students", {
         headers: {
             "Content-Type": "application/json",
@@ -9,7 +9,7 @@ export const getStudents = () => {
         .then(res => res.json())
 }
 
-export const getSingleStudent = (id) => {
+export const getStudentById = (id) => {
     return fetch(`http://localhost:8000/students/${id}`, {
         method: "GET",
         headers: {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getStudents } from '../managers/StudentManager'
+import { getAllStudents } from '../managers/StudentManager'
 import { Student } from './Student'
 
 
@@ -9,7 +9,7 @@ export const StudentList = () => {
 
     useEffect(
         () => {
-            getStudents()
+            getAllStudents()
                 .then(studentArray => {
                     setStudents(studentArray);
                 })

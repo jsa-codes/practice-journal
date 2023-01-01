@@ -18,19 +18,19 @@ export const getSingleInstructor = (id) => {
     .then(res => res.json())
 }
 
-export const addInstructor = instructor => {
-  return fetch("http://localhost:8000/instructors", {
-    method: "POST",
+export const getMyInstructor = (studentId) => {
+  return fetch(`http://localhost:8000/instructors?student=${studentId}`, {
     headers: {
       "Content-Type": "application/json",
+      "Accept": "application/json",
       "Authorization": `Token ${localStorage.getItem("pj_token")}`
-
-    },
-    body: JSON.stringify(instructor)
+    }
   })
+    .then(res => res.json())
 }
 
-export const updateInstructor = instructor => {
+
+export const updateInstructor = (instructor) => {
   return fetch(`http://localhost:8000/instructors/${instructor.id}`, {
     method: "PUT",
     headers: {
