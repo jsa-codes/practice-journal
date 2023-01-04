@@ -12,8 +12,8 @@ export const CommentForm = () => {
     }, [])
 
     const [comment, setComment] = useState({
-        date_created: "",
-        time_created: "",
+        date: "",
+        time: "",
         description: ""
     })
 
@@ -23,8 +23,8 @@ export const CommentForm = () => {
         const commentToSendToAPI = {
             user_id: currentUser.id,
             description: comment.description,
-            date: comment.date_created,
-            time: comment.time_created
+            date: comment.date,
+            time: comment.time
         }
 
         fetch(`http://localhost:8000/comments`, {

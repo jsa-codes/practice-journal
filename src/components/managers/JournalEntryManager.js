@@ -1,6 +1,9 @@
 export const getAllJournalEntries = () => {
-  return fetch("http://localhost:8000/journalentries", {
+  return fetch("http://localhost:8000/journalEntries", {
+    method: "GET",
     headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
       "Authorization": `Token ${localStorage.getItem("pj_token")}`
     }
   })
@@ -8,8 +11,11 @@ export const getAllJournalEntries = () => {
 }
 
 export const getJournalEntryById = (id) => {
-  return fetch(`http://localhost:8000/journalentries/${id}`, {
+  return fetch(`http://localhost:8000/journalEntries/${id}`, {
+    method: "GET",
     headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
       "Authorization": `Token ${localStorage.getItem("pj_token")}`
     }
   })
@@ -17,7 +23,7 @@ export const getJournalEntryById = (id) => {
 }
 
 export const getJournalEntryByUserId = (userId) => {
-  return fetch(`http://localhost:8000/journalentries?user=${userId}`, {
+  return fetch(`http://localhost:8000/journalEntries?user=${userId}`, {
     headers: {
       "Authorization": `Token ${localStorage.getItem("pj_token")}`
     }
@@ -26,7 +32,7 @@ export const getJournalEntryByUserId = (userId) => {
 }
 
 export const createJournalEntry = (journalentry) => {
-  return fetch("http://localhost:8000/journalentries", {
+  return fetch("http://localhost:8000/journalEntries", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,7 +45,7 @@ export const createJournalEntry = (journalentry) => {
 }
 
 export const updateJournalEntry = (journalentry) => {
-  return fetch(`http://localhost:8000/posts/${journalentry.id}`, {
+  return fetch(`http://localhost:8000/journalEntries/${journalentry.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

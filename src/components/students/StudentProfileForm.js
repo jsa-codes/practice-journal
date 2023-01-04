@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { updateStudent } from '../managers/StudentManager';
 import { getCurrentUser } from '../managers/UserManager';
 import "./StudentProfileForm.css"
 
 export const StudentProfileForm = () => {
 
+    const navigate = useNavigate()
     const [currentUser, setCurrentUser] = useState({})
 
     const [profile, updateProfile] = useState({
@@ -25,6 +27,7 @@ export const StudentProfileForm = () => {
     }, [feedback]);
     // ------------------------------------------------------
 
+    // GET CURRENT LOGGED IN USER 
     useEffect(
         () => {
             getCurrentUser()
@@ -33,6 +36,7 @@ export const StudentProfileForm = () => {
         []
     )
 
+    // UPDATE THE PROFILE OF THE CURRENT LOGGED IN USER
     useEffect(() => {
         updateProfile({
             age: currentUser.age,
@@ -40,6 +44,13 @@ export const StudentProfileForm = () => {
             yearsPlaying: currentUser.yearsPlaying,
         });
     }, [currentUser]);
+
+
+    const handleChange = (e) => {
+        updateProfile({ ...profile, [e.target.name]: e.target.value });
+    };
+
+
 
 
     const handleSubmit = (evt) => {
@@ -54,15 +65,13 @@ export const StudentProfileForm = () => {
         }
 
         // Object being passed in from the updatedStudent object above
-        updateStudent(updatedStudent)
+        updateStudent(updatedStudent).then(() => navigate('/journalEntries'))
 
 
     };
 
 
-    const handleChange = (e) => {
-        updateProfile({ ...profile, [e.target.name]: e.target.value });
-    };
+
 
     return (
         <>
@@ -113,7 +122,7 @@ export const StudentProfileForm = () => {
                     </div>
                 </fieldset>
                 <button
-                    onClick={(clickEvent) => handleSubmit(clickEvent)}
+                    onClick={(handleSubmit)}
                     className='btn btn-primary button-52'>
                     Save Profile
                 </button>

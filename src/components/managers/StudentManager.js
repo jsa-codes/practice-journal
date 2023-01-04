@@ -1,5 +1,6 @@
 export const getAllStudents = () => {
     return fetch("http://localhost:8000/students", {
+        method: "GET",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
@@ -22,7 +23,6 @@ export const getStudentById = (id) => {
 }
 
 export const updateStudent = (student) => {
-    console.log(student);
     return fetch(`http://localhost:8000/students/${student.id}`, {
         method: "PUT",
         headers: {

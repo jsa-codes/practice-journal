@@ -1,10 +1,8 @@
-import { CommentList } from '../comments/CommentList'
-import { StudentList } from '../students/StudentList'
+import { InstructorNav } from '../nav/InstructorNav'
 
 export const InstructorDashboard = () => {
 
     return <>
-        <StudentList />
-        <CommentList />
+        <InstructorNav />
     </>
 }

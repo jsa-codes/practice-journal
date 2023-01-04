@@ -1,19 +1,43 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Outlet, Route, Routes } from 'react-router-dom'
 import { CommentList } from '../comments/CommentList'
-import { InstructorList } from '../instructors/SelectInstructor'
+import { SelectInstructor } from '../instructors/SelectInstructor'
+import { JournalEntry } from '../journalentries/JournalEntry'
+import { JournalEntryDetails } from '../journalentries/JournalEntryDetails'
+import { JournalEntryEdit } from '../journalentries/JournalEntryEdit'
+import { JournalEntryForm } from '../journalentries/JournalEntryForm'
+import { JournalEntryList } from '../journalentries/JournalEntryList'
+import { StudentNav } from '../nav/StudentNav'
+import { StudentDashboard } from '../students/StudentDashboard'
 import { StudentProfileForm } from '../students/StudentProfileForm'
 
 export const StudentViews = () => {
-    return <>
-        <h2>Please Select Your Instructor</h2>
+    return (
+
         <Routes>
-            <Route path="/instructors" element={<InstructorList />} />
-            <Route path="/comments" element={<CommentList />} />
-            <Route path="/profile" element={<StudentProfileForm />} />
+            <Route path='/' element={
+                <>
+                    <StudentNav />
+
+                    <h1 className="title--main">Practice Journal</h1>
+
+                    <Outlet />
+                </>
+            }>
+                <Route path='/booty' element={<StudentDashboard />} />
+                <Route path="/students/:studentId" element={<StudentProfileForm />} />
+                <Route path="/comments" element={<CommentList />} />
+                <Route path="/instructors" element={<SelectInstructor />} />
+                <Route path="/journalEntries" element={<JournalEntryList />} />
+                <Route path="/journalEntries/:journalEntryId" element={<JournalEntry />} />
+                <Route path="/journalEntries/:journalEntryId/details" element={<JournalEntryDetails />} />
+                <Route path="/journalEntryForm" element={<JournalEntryForm />} />
+                <Route path="/journalEntries/:journalEntryId/edit" element={<JournalEntryEdit />} />
+            </Route>
         </Routes>
 
-    </>
+
+    )
 }
 
 /* 

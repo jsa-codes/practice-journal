@@ -1,4 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
+import Logo from '../assets/PracticeJournal.jpg'
+import './NavBar.css'
+
 
 export const StudentNav = () => {
 
@@ -8,16 +11,16 @@ export const StudentNav = () => {
         <>
             <ul className="navbar">
                 <li className="navbar__item">
-                    <Link className="nav-link" to="/about">About</Link>
-                </li>
-                <li className="navbar__item">
-                    <Link className="nav-link" to="/home">Home</Link>
+                    <a href="/home"><img src={Logo} alt="guitar" width={"150px"} /></a>
                 </li>
                 <li className="navbar__item">
                     <Link className="nav-link" to="/instructor/:instructorId">My Instructor</Link>
                 </li>
                 <li className="navbar__item">
-                    <Link className="nav-link" to="/myJournalEntries">My Journal Entries</Link>
+                    <Link className="nav-link" to="/journalEntries">Journal Entries</Link>
+                </li>
+                <li className="navbar__item">
+                    <Link className="nav-link" to="/journalEntryForm">New Entry</Link>
                 </li>
                 <li className="navbar__item">
                     <Link className="nav-link" to="/comments">Comments</Link>
@@ -29,7 +32,7 @@ export const StudentNav = () => {
                 {
                     (localStorage.getItem("pj_token") !== null) ?
                         <li className="nav-item">
-                            <button className="button-3 nav-link"
+                            <button className="button-52 nav-link"
                                 onClick={() => {
                                     localStorage.removeItem("pj_token")
                                     navigate('/login')
@@ -40,6 +43,8 @@ export const StudentNav = () => {
                 }
             </ul>
 
+
         </>
     )
+
 }
