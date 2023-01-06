@@ -8,12 +8,15 @@ export const JournalEntryList = () => {
 
   useEffect(
     () => {
-      getAllJournalEntries()
-        .then(entries => setJournalEntries(entries))
-        
+      getEntries()
     },
     []
   )
+
+  const getEntries = () => {
+    getAllJournalEntries()
+      .then(entries => setJournalEntries(entries))
+  }
 
 
   return <>
@@ -33,6 +36,7 @@ export const JournalEntryList = () => {
               nutrition={entry.nutrition}
               mood={entry.mood}
               sessionLength={entry.sessionLength}
+              getEntries={getEntries}
             />
           </div>
         }

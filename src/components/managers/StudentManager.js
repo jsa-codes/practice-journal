@@ -1,5 +1,5 @@
 export const getAllStudents = () => {
-    return fetch("http://localhost:8000/students", {
+    return fetch(`http://localhost:8000/students`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -10,8 +10,8 @@ export const getAllStudents = () => {
         .then(res => res.json())
 }
 
-export const getStudentById = (id) => {
-    return fetch(`http://localhost:8000/students/${id}`, {
+export const getStudentById = (studentId) => {
+    return fetch(`http://localhost:8000/students/${studentId}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

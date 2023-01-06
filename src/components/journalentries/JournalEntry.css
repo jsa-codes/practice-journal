@@ -26,3 +26,16 @@
     margin-top: 2rem;
     max-width: 700px;
 }
+
+.journalEntry__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.journalEntry header {
+    color: tomato;
+    font-size: 1rem;
+    font-weight: bold;
+}

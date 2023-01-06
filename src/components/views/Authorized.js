@@ -12,12 +12,10 @@ export const Authorized = () => {
   */
   const isInstructor = JSON.parse(localStorage.getItem("instructor"))
 
-
   if (localStorage.getItem("pj_token") && isInstructor) {
     return <>
       <InstructorViews />
     </>
-
 
   }
   else if (localStorage.getItem("pj_token") && !isInstructor) {

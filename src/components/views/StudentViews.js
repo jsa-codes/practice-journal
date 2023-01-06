@@ -19,12 +19,12 @@ export const StudentViews = () => {
                 <>
                     <StudentNav />
 
-                    <h1 className="title--main">Practice Journal</h1>
+                    {/* <h1 className="title--main">Practice Journal</h1> */}
 
                     <Outlet />
                 </>
             }>
-                <Route path='/booty' element={<StudentDashboard />} />
+                <Route path='/studentdashboard' element={<StudentDashboard />} />
                 <Route path="/students/:studentId" element={<StudentProfileForm />} />
                 <Route path="/comments" element={<CommentList />} />
                 <Route path="/instructors" element={<SelectInstructor />} />

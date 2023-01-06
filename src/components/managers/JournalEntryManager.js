@@ -44,14 +44,26 @@ export const createJournalEntry = (journalentry) => {
   }).then(res => res.json())
 }
 
-export const updateJournalEntry = (journalentry) => {
-  return fetch(`http://localhost:8000/journalEntries/${journalentry.id}`, {
+export const updateJournalEntry = (journalEntry) => {
+  console.log(journalEntry);
+  return fetch(`http://localhost:8000/journalEntries/${journalEntry.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
       "Accept": "application/json",
       "Authorization": `Token ${localStorage.getItem("pj_token")}`
     },
-    body: JSON.stringify(journalentry)
+    body: JSON.stringify(journalEntry)
+  })
+}
+
+export const deleteJournalEntry = (id) => {
+  return fetch(`http://localhost:8000/journalEntries/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+      "Authorization": `Token ${localStorage.getItem("pj_token")}`
+    }
   })
 }

@@ -39,6 +39,7 @@ export const updateInstructor = (instructor) => {
     },
     body: JSON.stringify(instructor)
   })
+    .then(res => res.json())
 }
 
 export const deleteInstructor = (id) => {

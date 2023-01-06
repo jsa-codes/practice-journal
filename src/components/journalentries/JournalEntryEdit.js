@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from 'react-router-dom';
-import { getJournalEntryById } from '../managers/JournalEntryManager';
+import { getJournalEntryById, updateJournalEntry } from '../managers/JournalEntryManager';
 import "./JournalEntryForm.css"
 
 export const JournalEntryEdit = () => {
@@ -33,26 +33,23 @@ export const JournalEntryEdit = () => {
   // ------------------------------------------------------
 
 
-
-  // GET CURRENT LOGGED IN USER 
   useEffect(
     () => {
-      getJournalEntryById()
+      getJournalEntryById(journalEntryId)
         .then(currentEntry => setCurrentEntry(currentEntry))
     },
     [journalEntryId]
   )
 
-  // UPDATE THE PROFILE OF THE CURRENT LOGGED IN USER
   useEffect(() => {
     updateEntry({
       id: currentEntry.id,
-      hours_slept: currentEntry.hoursSlept,
+      hours_slept: currentEntry.hours_slept,
       water: currentEntry.water,
       nutrition: currentEntry.nutrition,
       mood: currentEntry.mood,
       description: currentEntry.description,
-      session_length: currentEntry.sessionLength,
+      session_length: currentEntry.session_length,
     });
   }, [currentEntry]);
 
@@ -70,16 +67,17 @@ export const JournalEntryEdit = () => {
 
     const updatedEntry = {
       id: journalEntryId,
-      hoursSlept: currentEntry.hoursSlept,
-      water: currentEntry.water,
-      nutrition: currentEntry.yearsPlaying,
-      mood: currentEntry.mood,
-      description: currentEntry.description,
-      sessionLength: currentEntry.sessionLength,
+      hours_slept: entry.hours_slept,
+      water: entry.water,
+      nutrition: entry.nutrition,
+      mood: entry.mood,
+      description: entry.description,
+      session_length: entry.session_length,
     }
 
     // Object being passed in from the updatedEntry object above
-    updateEntry(updatedEntry).then(() => navigate('/journalEntries'))
+    updateJournalEntry(updatedEntry)
+    .then(navigate('/journalEntries'))
 
 
   };
@@ -104,24 +102,24 @@ export const JournalEntryEdit = () => {
       </div>
 
 
-      <form className='entry'>
+      <form className='journalEntryForm'>
         <h2 className='entry__title'>Journal Entry</h2>
 
         <fieldset>
           <div className='form-group'>
-            <label htmlFor='hoursSlept'></label>
+            <label htmlFor='hoursSlept'>Hours Slept</label>
             <input
               type='number'
               className='form-control'
-              value={entry.hoursSlept}
-              name='hoursSlept'
+              value={entry.hours_slept}
+              name='hours_slept'
               placeholder='How much slept did you get last night?'
               onChange={handleChange} />
           </div>
         </fieldset>
         <fieldset>
           <div className='form-group'>
-            <label htmlFor='water'></label>
+            <label htmlFor='water'>Glasses of Water</label>
             <input
               type='number'
               className='form-control'
@@ -133,7 +131,7 @@ export const JournalEntryEdit = () => {
         </fieldset>
         <fieldset>
           <div className='form-group'>
-            <label htmlFor='nutrition'></label>
+            <label htmlFor='nutrition'>What You've Eaten Today</label>
             <input
               type='text'
               className='form-control'
@@ -144,22 +142,10 @@ export const JournalEntryEdit = () => {
 
           </div>
         </fieldset>
-        <fieldset>
-          <div className='form-group'>
-            <label htmlFor='yearsPlaying'></label>
-            <input
-              type='number'
-              className='form-control'
-              value={entry.yearsPlaying}
-              name='yearsPlaying'
-              placeholder='Years You Have Been Playing?'
-              onChange={handleChange} />
 
-          </div>
-        </fieldset>
         <fieldset>
           <div className='form-group'>
-            <label htmlFor='description'></label>
+            <label htmlFor='description'>Description</label>
             <input
               type='text'
               className='form-control'
@@ -172,13 +158,13 @@ export const JournalEntryEdit = () => {
         </fieldset>
         <fieldset>
           <div className='form-group'>
-            <label htmlFor='sessionLength'></label>
+            <label htmlFor='sessionLength'>Session Length</label>
             <input
               type='number'
               className='form-control'
-              value={entry.sessionLength}
+              value={entry.session_length}
               name='sessionLength'
-              placeholder='Years You Have Been Playing?'
+              placeholder='Amount of time spent practicing?'
               onChange={handleChange} />
 
           </div>

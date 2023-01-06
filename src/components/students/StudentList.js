@@ -8,18 +8,20 @@ export const StudentList = () => {
 
     const [students, setStudents] = useState([])
 
-    useEffect(() => {
-        getAllStudents()
-            .then(setStudents)
-    }
-        , [])
+    useEffect(
+        () => {
+            getAllStudents()
+                .then(studentArray => setStudents(studentArray))
+        },
+        []
+    )
 
     return (
         <>
 
-            <h2>Current Students</h2>
 
             <div className='students'>
+                <h2>Current Students</h2>
                 {
                     students.map(student => {
                         return <>

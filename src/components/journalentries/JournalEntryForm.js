@@ -164,6 +164,9 @@ export const JournalEntryForm = () => {
         <div className='form-group'>
           <label htmlFor='sessionLength'>Session Length:</label>
           <input
+            required
+            autoFocus
+            className='form-control'
             type='number'
             placeholder='Minutes to practice?'
             value={journalEntry.sessionLength}
@@ -177,7 +180,7 @@ export const JournalEntryForm = () => {
       </fieldset>
       <button
         onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-        className='btn btn-primary button-52'>
+        className='btn btn-primary btn-submit'>
         Submit Journal Entry
       </button>
     </form>

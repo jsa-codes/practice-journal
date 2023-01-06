@@ -7,24 +7,25 @@ import "./StudentProfileForm.css"
 export const StudentProfileForm = () => {
 
     const navigate = useNavigate()
+
     const [currentUser, setCurrentUser] = useState({})
 
     const [profile, updateProfile] = useState({
         age: "",
         style: "",
-        yearsPlaying: "",
+        years_playing: "",
     });
 
 
     // FEEDBACK SLIDE IN ------------------------------
-    const [feedback, setFeedback] = useState('');
+    // const [feedback, setFeedback] = useState('');
 
-    useEffect(() => {
-        if (feedback !== '') {
-            // Clear feedback to make entire element disappear after 3 seconds
-            setTimeout(() => setFeedback(''), 3000);
-        }
-    }, [feedback]);
+    // useEffect(() => {
+    //     if (feedback !== '') {
+    //         // Clear feedback to make entire element disappear after 3 seconds
+    //         setTimeout(() => setFeedback(''), 3000);
+    //     }
+    // }, [feedback]);
     // ------------------------------------------------------
 
     // GET CURRENT LOGGED IN USER 
@@ -41,7 +42,7 @@ export const StudentProfileForm = () => {
         updateProfile({
             age: currentUser.age,
             style: currentUser.style,
-            yearsPlaying: currentUser.yearsPlaying,
+            years_playing: currentUser.years_playing,
         });
     }, [currentUser]);
 
@@ -61,11 +62,11 @@ export const StudentProfileForm = () => {
             id: currentUser.id,
             age: profile.age,
             style: profile.style,
-            yearsPlaying: profile.yearsPlaying,
+            years_playing: profile.years_playing,
         }
 
         // Object being passed in from the updatedStudent object above
-        updateStudent(updatedStudent).then(() => navigate('/journalEntries'))
+        updateStudent(updatedStudent).then(() => navigate('/studentdashboard'))
 
 
     };
@@ -75,18 +76,18 @@ export const StudentProfileForm = () => {
 
     return (
         <>
-            <div
+            {/* <div
                 className={`${feedback.includes('Error') ? 'error' : 'feedback'} ${feedback === '' ? 'invisible' : 'visible'
                     }`}
             >
                 {feedback}
-            </div>
+            </div> */}
             <form className='profile'>
                 <h2 className='profile__title'>My Profile</h2>
 
                 <fieldset>
                     <div className='form-group'>
-                        <label htmlFor='age'></label>
+                        <label htmlFor='age'>Your Current Age</label>
                         <input
                             type='number'
                             className='form-control'
@@ -98,7 +99,7 @@ export const StudentProfileForm = () => {
                 </fieldset>
                 <fieldset>
                     <div className='form-group'>
-                        <label htmlFor='style'></label>
+                        <label htmlFor='style'>Guitar Style</label>
                         <input
                             type='text'
                             className='form-control'
@@ -110,12 +111,12 @@ export const StudentProfileForm = () => {
                 </fieldset>
                 <fieldset>
                     <div className='form-group'>
-                        <label htmlFor='yearsPlaying'></label>
+                        <label htmlFor='years_playing'>How long have you been playing?</label>
                         <input
                             type='number'
                             className='form-control'
-                            value={profile.yearsPlaying}
-                            name='yearsPlaying'
+                            value={profile.years_playing}
+                            name='years_playing'
                             placeholder='Years You Have Been Playing?'
                             onChange={handleChange} />
 
@@ -123,7 +124,7 @@ export const StudentProfileForm = () => {
                 </fieldset>
                 <button
                     onClick={(handleSubmit)}
-                    className='btn btn-primary button-52'>
+                    className='btn btn-primary btn-save'>
                     Save Profile
                 </button>
             </form>

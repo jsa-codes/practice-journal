@@ -11,10 +11,10 @@ export const StudentNav = () => {
         <>
             <ul className="navbar">
                 <li className="navbar__item">
-                    <a href="/home"><img src={Logo} alt="guitar" width={"150px"} /></a>
+                    <a href="/journalEntryForm"><img src={Logo} alt="guitar" width={"175px"} /></a>
                 </li>
                 <li className="navbar__item">
-                    <Link className="nav-link" to="/instructor/:instructorId">My Instructor</Link>
+                    <Link className="nav-link" to="/instructors">My Instructor</Link>
                 </li>
                 <li className="navbar__item">
                     <Link className="nav-link" to="/journalEntries">Journal Entries</Link>
@@ -32,7 +32,7 @@ export const StudentNav = () => {
                 {
                     (localStorage.getItem("pj_token") !== null) ?
                         <li className="nav-item">
-                            <button className="button-52 nav-link"
+                            <button className="btn-logout nav-link"
                                 onClick={() => {
                                     localStorage.removeItem("pj_token")
                                     navigate('/login')

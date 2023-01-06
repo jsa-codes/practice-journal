@@ -1,4 +1,5 @@
 export const loginUser = (user) => {
+  console.log(user);
   return fetch("http://localhost:8000/login", {
     method: "POST",
     headers: {

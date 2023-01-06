@@ -10,7 +10,7 @@ export const InstructorNav = () => {
         <>
             <ul className="navbar">
                 <li className="navbar__item">
-                    <a href="/home"><img src={Logo} alt="guitar" width={"150px"} /></a>
+                    <a href="/"><img src={Logo} alt="guitar" width={"150px"} /></a>
                 </li>
                 <li className="navbar__item">
                     <Link className="nav-link" to="/instructors/:instructorId">Profile</Link>
@@ -18,11 +18,6 @@ export const InstructorNav = () => {
                 <li className="navbar__item">
                     <Link className="nav-link" to="/students">My Students</Link>
                 </li>
-
-                <li className="navbar__item">
-                    <Link className="nav-link" to="/comments">Comments</Link>
-                </li>
-
 
                 {
                     (localStorage.getItem("pj_token") !== null) ?
