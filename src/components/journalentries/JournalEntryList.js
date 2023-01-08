@@ -18,6 +18,8 @@ export const JournalEntryList = () => {
       .then(entries => setJournalEntries(entries))
   }
 
+  console.log(journalEntries)
+
 
   return <>
     <h2>Journal Entries</h2>

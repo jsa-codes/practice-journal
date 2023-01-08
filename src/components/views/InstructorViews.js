@@ -1,12 +1,13 @@
 import React from 'react'
 import { Outlet, Route, Routes } from 'react-router-dom'
 import { CommentList } from '../comments/CommentList'
-import { Instructor } from '../instructors/Instructor'
 import { InstructorDashboard } from '../instructors/InstructorDashboard'
 import { InstructorProfileForm } from '../instructors/InstructorProfileForm'
 import { InstructorNav } from '../nav/InstructorNav'
 import { StudentDetails } from '../students/StudentDetails'
 import { StudentList } from '../students/StudentList'
+import { HomePage } from '../home/HomePage'
+import { JournalEntriesByStudent } from '../journalentries/JournalEntriesByStudent'
 
 export const InstructorViews = () => {
     return (
@@ -20,13 +21,13 @@ export const InstructorViews = () => {
                     <Outlet />
                 </>
             }>  
-                <Route path='/booty' element={<InstructorDashboard />} />
-                <Route path='/students' element={<StudentList />} />
+                <Route path='/' element={<HomePage />} />
                 <Route path='/instructorNav' element={<InstructorNav />} />
-                <Route path="/students" element={<StudentList />} />
-                {/* <Route path="/students/:id" element={<StudentDetails />} /> */}
-                <Route path="/students/:studentId/details" element={<StudentDetails />} />
+                <Route path='/instructordashboard' element={<InstructorDashboard />} />
                 <Route path="/instructors/:current" element={<InstructorProfileForm />} />
+                <Route path="/students" element={<StudentList />} />
+                <Route path="/students/:studentId/details" element={<StudentDetails />} />
+                <Route path="/students/:studentId/journal" element={<JournalEntriesByStudent />} />
                 <Route path="/comments" element={<CommentList />} />
             </Route>
         </Routes>

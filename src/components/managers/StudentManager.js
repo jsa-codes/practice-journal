@@ -10,8 +10,8 @@ export const getAllStudents = () => {
         .then(res => res.json())
 }
 
-export const getStudentById = (studentId) => {
-    return fetch(`http://localhost:8000/students/${studentId}`, {
+export const getStudentById = (id) => {
+    return fetch(`http://localhost:8000/students/${id}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -32,7 +32,6 @@ export const updateStudent = (student) => {
         },
         body: JSON.stringify(student)
     })
-        .then(res => res.json())
 }
 
 export const deleteStudent = (id) => {

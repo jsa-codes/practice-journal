@@ -12,12 +12,12 @@ export const JournalEntryEdit = () => {
 
 
   const [entry, updateEntry] = useState({
-    hoursSlept: "",
+    hours_slept: "",
     water: "",
     nutrition: "",
     mood: "",
     description: "",
-    sessionLength: "",
+    session_length: "",
   });
 
 
@@ -77,19 +77,12 @@ export const JournalEntryEdit = () => {
 
     // Object being passed in from the updatedEntry object above
     updateJournalEntry(updatedEntry)
-    .then(navigate('/journalEntries'))
+      .then(alert("Your Journal Entry has been updated!"))
+      .then(navigate('/journalEntries'))
 
 
   };
 
-  /* 
-    - hoursSlept
-    - water
-    - nutrition
-    - mood
-    - description
-    - sessionLength
-  */
 
 
   return (
@@ -142,6 +135,19 @@ export const JournalEntryEdit = () => {
 
           </div>
         </fieldset>
+        <fieldset>
+          <div className='form-group'>
+            <label htmlFor='description'>Current Mood</label>
+            <input
+              type='text'
+              className='form-control'
+              value={entry.mood}
+              name='mood'
+              placeholder='How are you feeling?'
+              onChange={handleChange} />
+
+          </div>
+        </fieldset>
 
         <fieldset>
           <div className='form-group'>
@@ -158,12 +164,12 @@ export const JournalEntryEdit = () => {
         </fieldset>
         <fieldset>
           <div className='form-group'>
-            <label htmlFor='sessionLength'>Session Length</label>
+            <label htmlFor='session_length'>Session Length</label>
             <input
               type='number'
               className='form-control'
               value={entry.session_length}
-              name='sessionLength'
+              name='session_length'
               placeholder='Amount of time spent practicing?'
               onChange={handleChange} />
 
@@ -172,7 +178,7 @@ export const JournalEntryEdit = () => {
         <button
           onClick={(handleSubmit)}
           className='btn btn-primary button-52'>
-          Save Profile
+          Save Entry
         </button>
       </form>
     </>

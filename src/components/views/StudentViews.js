@@ -1,6 +1,7 @@
 import React from 'react'
 import { Outlet, Route, Routes } from 'react-router-dom'
 import { CommentList } from '../comments/CommentList'
+import { HomePage } from '../home/HomePage'
 import { SelectInstructor } from '../instructors/SelectInstructor'
 import { JournalEntry } from '../journalentries/JournalEntry'
 import { JournalEntryDetails } from '../journalentries/JournalEntryDetails'
@@ -19,11 +20,13 @@ export const StudentViews = () => {
                 <>
                     <StudentNav />
 
-                    {/* <h1 className="title--main">Practice Journal</h1> */}
+                    {/* <h1 className="title--main">Practice Journal</h1>
+                    <h3>Music is a Journey. So, why not start treating it like one?</h3> */}
 
                     <Outlet />
                 </>
             }>
+                <Route path='/' element={<HomePage />} />
                 <Route path='/studentdashboard' element={<StudentDashboard />} />
                 <Route path="/students/:studentId" element={<StudentProfileForm />} />
                 <Route path="/comments" element={<CommentList />} />

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
 import { getStudentById } from '../managers/StudentManager';
+import './StudentDetails.css'
 
 export const StudentDetails = () => {
 
@@ -17,16 +19,23 @@ export const StudentDetails = () => {
         },
         []
     )
-    console.log(studentId)
 
 
     return (
-        <section className='student'>
-            <header className='student'>Name: {student.full_name}</header>
-            <div>Age: {student.age}</div>
-            <div>Style: {student.style}</div>
-            <div>Years Playing: {student.years_playing}</div>
-        </section>
+        <div className='students'>
+            <section className='student__section' key={`student--${student.id}`}>
+                <div className='card'>
+                    <img className="thumbnail" src="https://images.equipboard.com/uploads/user/image/3382/big_jimi-hendrix.jpg" alt="" />
+                    <div className='profile'>
+                        <h3>Name: {student.full_name}</h3>
+                        <h4>Age: {student.age}</h4>
+                        <h4>Style: {student.style}</h4>
+                        <Link to="/students/:studentId/journal"
+                        >See Journal Entries</Link>
+                    </div>
+                </div>
+            </section>
+        </div>
     )
 
 }

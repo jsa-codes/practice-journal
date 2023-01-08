@@ -66,7 +66,8 @@ export const StudentProfileForm = () => {
         }
 
         // Object being passed in from the updatedStudent object above
-        updateStudent(updatedStudent).then(() => navigate('/studentdashboard'))
+        updateStudent(updatedStudent).then(alert("Your Profile has been updated!"))
+            .then(navigate('/'))
 
 
     };

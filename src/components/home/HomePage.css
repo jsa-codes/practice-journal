@@ -1,0 +1,35 @@
+.heading--welcome { 
+    margin: 0; 
+    padding: 1rem;
+    box-sizing: border-box;
+    /* border: 1px solid grey; */
+}
+
+.heading--welcome h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+.heading--welcome h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* .heading--welcome img {
+    display: flex;
+    max-width: 100%;
+    height: auto;
+} */
+
+.video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    top: 43%;
+}

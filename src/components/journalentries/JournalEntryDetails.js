@@ -18,7 +18,6 @@ export const JournalEntryDetails = () => {
         [journalEntryId]
     )
 
-    console.log(journalEntry)
 
     return (<>
         <h2>Journal Entry Details</h2>
@@ -39,7 +38,7 @@ export const JournalEntryDetails = () => {
                     >Edit</button>
                 </div>
             </div>
-            
+
         </section>
     </>)
 

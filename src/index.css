@@ -1,7 +1,3 @@
-html {
-  margin-top: 2rem;
-}
-
 body {
   box-sizing: border-box;
   margin: 0;
@@ -17,50 +13,15 @@ code {
     monospace;
 }
 
-/* BUTTON-52 */
-.button-52 {
-  font-size: 16px;
-  font-weight: 200;
-  letter-spacing: 1px;
-  padding: .5rem .5rem;
-  margin: 1rem 1rem;
-  outline: 0;
-  border: 1px solid black;
-  cursor: pointer;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
 
-.button-52:after {
-  content: "";
-  background-color: #ffe54c;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  left: 7px;
-  transition: 0.2s;
-}
 
-.button-52:hover:after {
-  top: 0px;
-  left: 0px;
-}
 
-@media (min-width: 768px) {
-  .button-52 {
-    padding: .7rem 1rem;
-  }
-}
 
 /* BUTON-DELETE */
 .btn-delete {
   font-size: 16px;
   font-weight: 200;
+  width: 6rem;
   letter-spacing: 1px;
   padding: .5rem .5rem;
   margin: 1rem 1rem;
@@ -107,6 +68,7 @@ code {
 .btn-respond {
   font-size: 16px;
   font-weight: 200;
+  width: 6rem;
   letter-spacing: 1px;
   padding: .5rem .5rem;
   margin: 1rem 1rem;
@@ -153,6 +115,7 @@ code {
 .btn-logout {
   font-size: 16px;
   font-weight: 200;
+  height: 3rem;
   letter-spacing: 1px;
   padding: .5rem .5rem;
   margin: 1rem 1rem;
@@ -292,6 +255,7 @@ code {
 .btn-edit {
   font-size: 16px;
   font-weight: 200;
+  width: 6rem;
   letter-spacing: 1px;
   padding: .5rem .5rem;
   margin: 1rem 1rem;
@@ -338,6 +302,7 @@ code {
 .btn-view {
   font-size: 16px;
   font-weight: 200;
+  width: 6rem;
   letter-spacing: 1px;
   padding: .5rem .7rem;
   margin: 1rem 1rem;

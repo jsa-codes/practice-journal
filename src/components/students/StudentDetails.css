@@ -1,6 +1,5 @@
 .student__section {
-    display: grid;
-     grid-template-rows:    repeat(4, auto);
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -14,7 +13,7 @@
 }
 
 .students {
-    display: grid;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;

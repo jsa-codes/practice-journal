@@ -22,9 +22,12 @@ export const getJournalEntryById = (id) => {
     .then(res => res.json())
 }
 
-export const getJournalEntryByUserId = (userId) => {
-  return fetch(`http://localhost:8000/journalEntries?user=${userId}`, {
+export const getJournalEntryByStudentId = (studentId) => {
+  return fetch(`http://localhost:8000/journalEntries/${studentId}`, {
+    method: "GET",
     headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
       "Authorization": `Token ${localStorage.getItem("pj_token")}`
     }
   })

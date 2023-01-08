@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getAllStudents } from '../managers/StudentManager'
 import { Link } from 'react-router-dom'
+import './StudentList.css'
 
 
 
@@ -25,11 +26,11 @@ export const StudentList = () => {
                 {
                     students.map(student => {
                         return <>
-                            <section className="student" key={`student--${student.id}`}>
-                                <div>
-                                    <Link to={`/students/${student.id}/details`}>Name: {student.full_name}</Link>
-                                </div>
-                                <div>Age:{student.age}</div>
+                            <section className="student__section" key={`student--${student.id}`}>
+                                <h3>
+                                    <Link to={`/students/${student.id}/details`}>{student.full_name}</Link>
+                                </h3>
+                                <h4>Age:{student.age}</h4>
 
                             </section>
 

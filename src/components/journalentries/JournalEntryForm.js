@@ -12,12 +12,12 @@ export const JournalEntryForm = () => {
 
   const [journalEntry, updateJournalEntry] = useState({
     // time: '',
-    hoursSlept: '',
+    hours_slept: '',
     water: '',
     nutrition: '',
     mood: '',
     description: '',
-    sessionLength: '',
+    session_length: '',
   })
 
 
@@ -41,12 +41,12 @@ export const JournalEntryForm = () => {
     const entryToSendToAPI = {
       id: currentUser.id,
       // time: journalEntry.time,
-      hoursSlept: journalEntry.hoursSlept,
+      hours_slept: journalEntry.hours_slept,
       water: journalEntry.water,
       nutrition: journalEntry.nutrition,
       mood: journalEntry.mood,
       description: journalEntry.description,
-      sessionLength: journalEntry.sessionLength,
+      session_length: journalEntry.session_length,
     }
 
     // TO-DO: Perform the fetch() to POST the object to the API
@@ -72,17 +72,17 @@ export const JournalEntryForm = () => {
 
       <fieldset>
         <div className='form-group'>
-          <label htmlFor='hoursSlept'>Hours Slept:</label>
+          <label htmlFor='hours_slept'>Hours Slept:</label>
           <input
             required
             autoFocus
             type='number'
             className='form-control'
             placeholder='How many hours did you sleep?'
-            value={journalEntry.hoursSlept}
+            value={journalEntry.hours_slept}
             onChange={(evt) => {
               const copy = { ...journalEntry };
-              copy.hoursSlept = evt.target.value;
+              copy.hours_slept = evt.target.value;
               updateJournalEntry(copy);
             }}
           />
@@ -162,17 +162,17 @@ export const JournalEntryForm = () => {
       </fieldset>
       <fieldset>
         <div className='form-group'>
-          <label htmlFor='sessionLength'>Session Length:</label>
+          <label htmlFor='session_length'>Session Length:</label>
           <input
             required
             autoFocus
             className='form-control'
             type='number'
             placeholder='Minutes to practice?'
-            value={journalEntry.sessionLength}
+            value={journalEntry.session_length}
             onChange={(evt) => {
               const copy = { ...journalEntry };
-              copy.sessionLength = evt.target.value;
+              copy.session_length = evt.target.value;
               updateJournalEntry(copy);
             }}
           />

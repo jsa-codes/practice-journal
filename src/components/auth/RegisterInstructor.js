@@ -4,11 +4,11 @@ import { registerUser } from "../managers/AuthManager"
 import "./Auth.css"
 
 export const RegisterInstructor = () => {
-    const firstName = useRef()
-    const lastName = useRef()
+    const first_name = useRef()
+    const last_name = useRef()
     const username = useRef()
     const age = useRef()
-    const yearsPlaying = useRef()
+    const years_playing = useRef()
     const location = useRef()
     const bio = useRef()
     const email = useRef()
@@ -26,10 +26,10 @@ export const RegisterInstructor = () => {
                 "account_type": "instructor",
                 "is_staff": true,
                 "username": username.current.value,
-                "first_name": firstName.current.value,
-                "last_name": lastName.current.value,
+                "first_name": first_name.current.value,
+                "last_name": last_name.current.value,
                 "age": age.current.value,
-                "years_playing": yearsPlaying.current.value,
+                "years_playing": years_playing.current.value,
                 "location": location.current.value,
                 "bio": bio.current.value,
                 "email": email.current.value,
@@ -60,19 +60,19 @@ export const RegisterInstructor = () => {
                 <h1 className="h3 mb-3 font-weight-normal">Create an Instructor Profile</h1>
                 <fieldset>
                     <label htmlFor="firstName"> First Name </label>
-                    <input ref={firstName} type="text" name="firstName" className="form-control" placeholder="First name" required autoFocus />
+                    <input ref={first_name} type="text" name="firstName" className="form-control" placeholder="First name" required autoFocus />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="lastName"> Last Name </label>
-                    <input ref={lastName} type="text" name="lastName" className="form-control" placeholder="Last name" required />
+                    <label htmlFor="lastame"> Last Name </label>
+                    <input ref={last_name} type="text" name="lastName" className="form-control" placeholder="Last name" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="age"> Age </label>
                     <input ref={age} type="text" name="age" className="form-control" placeholder="Age" required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="yearsPlaying"> Years Playing </label>
-                    <input ref={yearsPlaying} type="number" name="yearsPlaying" className="form-control" placeholder="Years Playing" required />
+                    <label htmlFor="years_nlaying"> Years Playing </label>
+                    <input ref={years_playing} type="number" name="yearsPlaying" className="form-control" placeholder="Years Playing" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="bio"> Bio </label>
@@ -102,7 +102,7 @@ export const RegisterInstructor = () => {
                     textAlign: "center"
                 }}>
 
-                    <button className="btn btn-1 btn-sep icon-send" type="submit">Register as an Instructor</button>
+                    <button className="btn button-52 btn-1 btn-sep icon-send" type="submit">Register as an Instructor</button>
                 </fieldset>
             </form>
             <section className="link--login">
