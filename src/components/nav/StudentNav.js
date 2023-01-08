@@ -22,9 +22,7 @@ export const StudentNav = () => {
                 <li className="navbar__item">
                     <Link className="nav-link" to="/journalEntryForm">New Entry</Link>
                 </li>
-                <li className="navbar__item">
-                    <Link className="nav-link" to="/comments">Comments</Link>
-                </li>
+
                 <li className="navbar__item">
                     <Link className="nav-link" to="/students/studentId">Profile</Link>
                 </li>

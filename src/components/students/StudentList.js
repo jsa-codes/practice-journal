@@ -25,16 +25,15 @@ export const StudentList = () => {
                 <h2>Current Students</h2>
                 {
                     students.map(student => {
-                        return <>
-                            <section className="student__section" key={`student--${student.id}`}>
-                                <h3>
-                                    <Link to={`/students/${student.id}/details`}>{student.full_name}</Link>
-                                </h3>
-                                <h4>Age:{student.age}</h4>
+                        return <section className="student__section" key={`student--${student.id}`}>
+                            <h3>
+                                <Link to={`/students/${student.id}/details`}>{student.full_name}</Link>
+                            </h3>
+                            <h4>Age:{student.age}</h4>
 
-                            </section>
+                        </section>
 
-                        </>
+
                     })
                 }
 

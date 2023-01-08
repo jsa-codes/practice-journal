@@ -30,7 +30,7 @@ export const StudentDetails = () => {
                         <h3>Name: {student.full_name}</h3>
                         <h4>Age: {student.age}</h4>
                         <h4>Style: {student.style}</h4>
-                        <Link to="/students/:studentId/journal"
+                        <Link to={`/students/${student.id}/journal`}
                         >See Journal Entries</Link>
                     </div>
                 </div>

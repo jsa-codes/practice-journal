@@ -9,7 +9,6 @@ export const StudentDashboard = () => {
         <JournalEntryForm />
         <StudentNav />
         <SelectInstructor />
-        <CommentList />
         <JournalEntryList />
     </>
 }

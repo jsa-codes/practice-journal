@@ -41,7 +41,7 @@ export const Login = () => {
         <div>Email or password was not valid.</div>
         <button className="button--close" onClick={e => invalidDialog.current.close()}>Close</button>
       </dialog>
-      <section >
+      <section className='form__section'>
         <form className="form--login" onSubmit={handleLogin}>
           <h1 className='form--header'>Practice Journal</h1>
           <h2>Please sign in</h2>
@@ -55,7 +55,7 @@ export const Login = () => {
             <label htmlFor="inputPassword"></label>
             <input ref={password} type="password" id="password" className="form-control" placeholder="password" required />
           </fieldset>
-          <fieldset className='form--fieldset'>
+          <fieldset className='form--fieldset button--fieldset'>
             <button className="button-52" type="submit">Sign In</button>
           </fieldset>
         </form>

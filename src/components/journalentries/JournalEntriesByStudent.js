@@ -1,46 +1,47 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 import { getAllJournalEntries } from '../managers/JournalEntryManager'
-import {  getStudentById } from '../managers/StudentManager'
 
 export const JournalEntriesByStudent = () => {
 
+
     const { studentId } = useParams()
 
-    const [student, setStudent] = useState({});
     const [journalEntries, setJournalEntries] = useState([]);
 
     useEffect(
         () => {
-            getStudentById(studentId)
-                .then(student => {
-                    setStudent(student);
-                })
-        },
-        [studentId]
-    )
-
-    useEffect(
-        () => {
             getAllJournalEntries()
-                .then(journalEntryArray => {
-                    setJournalEntries(journalEntryArray)
-                })
+                .then(response => setJournalEntries(response))
         }, [])
 
+    const filteredJournalEntries = journalEntries.filter(entry => entry.student.id === parseInt(studentId))
 
     return (
+        <>
 
-        <div>
             {
-                journalEntries.map(entry => {
-                    return <>
-                        <div>Journal Entry {entry.id}</div>
-                    </>
-                })
+                filteredJournalEntries.map(entry => {
+                    return (
+                        <section key={`journalEntry--${entry.id}`}>
+                            <h4>Date of Entry:{entry.date}</h4>
+                            <h4>Time of Entry:{entry.time}</h4>
+                            <h4>Hours Slept:{entry.hours_slept}</h4>
+                            <h4>Water:{entry.water}</h4>
+                            <h4>Mood:{entry.mood}</h4>
+                            <h4>Nutrition:{entry.nutrition}</h4>
+                            <h4>Length of Practice Session:{entry.session_length}</h4>
+                            <h3>Description:</h3>
+                            <h4>{entry.description}</h4>
+                        </section>
+                    )
+                }
+
+
+
+                )
+
             }
-        </div>
-
+        </>
     )
-
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet, Route, Routes } from 'react-router-dom'
-import { CommentList } from '../comments/CommentList'
+// import { CommentList } from '../comments/CommentList'
 import { HomePage } from '../home/HomePage'
 import { SelectInstructor } from '../instructors/SelectInstructor'
 import { JournalEntry } from '../journalentries/JournalEntry'
@@ -29,7 +29,7 @@ export const StudentViews = () => {
                 <Route path='/' element={<HomePage />} />
                 <Route path='/studentdashboard' element={<StudentDashboard />} />
                 <Route path="/students/:studentId" element={<StudentProfileForm />} />
-                <Route path="/comments" element={<CommentList />} />
+                {/* <Route path="/comments" element={<CommentList />} /> */}
                 <Route path="/instructors" element={<SelectInstructor />} />
                 <Route path="/journalEntries" element={<JournalEntryList />} />
                 <Route path="/journalEntries/:journalEntryId" element={<JournalEntry />} />

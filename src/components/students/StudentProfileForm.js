@@ -16,18 +16,6 @@ export const StudentProfileForm = () => {
         years_playing: "",
     });
 
-
-    // FEEDBACK SLIDE IN ------------------------------
-    // const [feedback, setFeedback] = useState('');
-
-    // useEffect(() => {
-    //     if (feedback !== '') {
-    //         // Clear feedback to make entire element disappear after 3 seconds
-    //         setTimeout(() => setFeedback(''), 3000);
-    //     }
-    // }, [feedback]);
-    // ------------------------------------------------------
-
     // GET CURRENT LOGGED IN USER 
     useEffect(
         () => {
@@ -36,7 +24,6 @@ export const StudentProfileForm = () => {
         },
         []
     )
-
     // UPDATE THE PROFILE OF THE CURRENT LOGGED IN USER
     useEffect(() => {
         updateProfile({
@@ -52,11 +39,8 @@ export const StudentProfileForm = () => {
     };
 
 
-
-
     const handleSubmit = (evt) => {
         evt.preventDefault();
-
 
         const updatedStudent = {
             id: currentUser.id,
@@ -64,25 +48,13 @@ export const StudentProfileForm = () => {
             style: profile.style,
             years_playing: profile.years_playing,
         }
-
         // Object being passed in from the updatedStudent object above
         updateStudent(updatedStudent).then(alert("Your Profile has been updated!"))
             .then(navigate('/'))
-
-
     };
-
-
-
 
     return (
         <>
-            {/* <div
-                className={`${feedback.includes('Error') ? 'error' : 'feedback'} ${feedback === '' ? 'invisible' : 'visible'
-                    }`}
-            >
-                {feedback}
-            </div> */}
             <form className='profile'>
                 <h2 className='profile__title'>My Profile</h2>
 
@@ -120,7 +92,6 @@ export const StudentProfileForm = () => {
                             name='years_playing'
                             placeholder='Years You Have Been Playing?'
                             onChange={handleChange} />
-
                     </div>
                 </fieldset>
                 <button

@@ -20,7 +20,7 @@ export const InstructorViews = () => {
 
                     <Outlet />
                 </>
-            }>  
+            }>
                 <Route path='/' element={<HomePage />} />
                 <Route path='/instructorNav' element={<InstructorNav />} />
                 <Route path='/instructordashboard' element={<InstructorDashboard />} />
@@ -28,7 +28,6 @@ export const InstructorViews = () => {
                 <Route path="/students" element={<StudentList />} />
                 <Route path="/students/:studentId/details" element={<StudentDetails />} />
                 <Route path="/students/:studentId/journal" element={<JournalEntriesByStudent />} />
-                <Route path="/comments" element={<CommentList />} />
             </Route>
         </Routes>
 

@@ -56,55 +56,56 @@ export const RegisterInstructor = () => {
                 <button className="button--close" onClick={e => passwordDialog.current.close()}>Close</button>
             </dialog>
 
-            <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Create an Instructor Profile</h1>
-                <fieldset>
-                    <label htmlFor="firstName"> First Name </label>
-                    <input ref={first_name} type="text" name="firstName" className="form-control" placeholder="First name" required autoFocus />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="lastame"> Last Name </label>
-                    <input ref={last_name} type="text" name="lastName" className="form-control" placeholder="Last name" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="age"> Age </label>
-                    <input ref={age} type="text" name="age" className="form-control" placeholder="Age" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="years_nlaying"> Years Playing </label>
-                    <input ref={years_playing} type="number" name="yearsPlaying" className="form-control" placeholder="Years Playing" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="bio"> Bio </label>
-                    <input ref={bio} type="text" name="bio" className="form-control" placeholder="Bio" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="location"> Location </label>
-                    <input ref={location} type="text" name="location" className="form-control" placeholder="Location" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="inputUsername">Username</label>
-                    <input ref={username} type="text" name="username" className="form-control" placeholder="Username" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="inputEmail"> Email address </label>
-                    <input ref={email} type="email" name="email" className="form-control" placeholder="Email address" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="inputPassword"> Password </label>
-                    <input ref={password} type="password" name="password" className="form-control" placeholder="Password" required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="verifyPassword"> Verify Password </label>
-                    <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Verify password" required />
-                </fieldset>
-                <fieldset style={{
-                    textAlign: "center"
-                }}>
-
-                    <button className="btn button-52 btn-1 btn-sep icon-send" type="submit">Register as an Instructor</button>
-                </fieldset>
-            </form>
+            <section className='form__section'>
+                <form className="form--login" onSubmit={handleRegister}>
+                    <h1 className="h3 mb-3 font-weight-normal">Create an Instructor Profile</h1>
+                    <fieldset>
+                        <label htmlFor="firstName"> First Name </label>
+                        <input ref={first_name} type="text" name="firstName" className="form-control" placeholder="What's your first name?" required autoFocus />
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="lastame"> Last Name </label>
+                        <input ref={last_name} type="text" name="lastName" className="form-control" placeholder="What's your last name?" required />
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="age"> Age </label>
+                        <input ref={age} type="text" name="age" className="form-control" placeholder="How old are you?" required />
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="years_nlaying"> Years Playing </label>
+                        <input ref={years_playing} type="number" name="yearsPlaying" className="form-control" placeholder="How long have you been playing?" required />
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="bio"> Bio </label>
+                        <input ref={bio} type="text" name="bio" className="form-control" placeholder="Tell us a little about yourself..." required />
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="location"> Location </label>
+                        <input ref={location} type="text" name="location" className="form-control" placeholder="Where are you located?" required />
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="inputUsername">Username</label>
+                        <input ref={username} type="text" name="username" className="form-control" placeholder="Please create a username" required />
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="inputEmail"> Email address </label>
+                        <input ref={email} type="email" name="email" className="form-control" placeholder="What's your email address?" required />
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="inputPassword"> Password </label>
+                        <input ref={password} type="password" name="password" className="form-control" placeholder="Please create a strong password" required />
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="verifyPassword"> Verify Password </label>
+                        <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Please verify your password" required />
+                    </fieldset>
+                    <fieldset style={{
+                        textAlign: "center"
+                    }}>
+                        <button className="btn button-52 btn-1 btn-sep icon-send" type="submit">Register as an Instructor</button>
+                    </fieldset>
+                </form>
+            </section>
             <section className="link--login">
                 Already registered? <Link to="/login">Login</Link>
             </section>

@@ -33,11 +33,11 @@ export const JournalEntryList = () => {
               date={entry.date}
               time={entry.time}
               description={entry.description}
-              hoursSlept={entry.hoursSlept}
+              hours_slept={entry.hours_slept}
               water={entry.water}
               nutrition={entry.nutrition}
               mood={entry.mood}
-              sessionLength={entry.sessionLength}
+              session_length={entry.session_length}
               getEntries={getEntries}
             />
           </div>

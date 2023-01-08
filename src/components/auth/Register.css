@@ -1,4 +1,4 @@
-.container--login {
+.container--register {
     margin-bottom: 1.6rem;
 }
 
@@ -6,6 +6,8 @@
     padding-top: 0;
     margin-top: 0;
 }
+
+
 
 .form__section {
     display: flex;
@@ -15,8 +17,8 @@
     /* margin-top: 6rem; */
 }
 
-.form--login {
-    /* opacity: 1; */
+/* .form--register {
+    opacity: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,12 +29,12 @@
     margin-bottom: 1.6rem;
     margin-top: 2rem;
     max-width: 700px;
-}
+} */
 
 .form--fieldset {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 1.6rem;
 }
@@ -45,8 +47,10 @@
     padding: 1.6rem;
 }
 
-.link--registerinstructor {
+.link--register {
+    margin-top: 1.6rem;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .register--link:hover {
@@ -55,6 +59,52 @@
     list-style-type: none;
     color: tomato;
 }
+
+input[type=text] {
+  padding:10px;
+  margin:10px 10px; 
+  border: 0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+input[type=number] {
+  padding:10px;
+  margin:10px 10px; 
+  border: 0;
+  box-shadow:0 0 15px 8px rgba(0,0,0,0.06);
+}
+
+
+input[type=username] {
+  padding:10px;
+  margin:10px 10px; 
+  border: 0;
+  box-shadow:0 0 15px 8px rgba(0,0,0,0.06);
+}
+
+input[type=email] {
+  padding:10px;
+  margin:10px 10px; 
+  border: 0;
+  box-shadow:0 0 15px 8px rgba(0,0,0,0.06);
+}
+
+input[type=password] {
+  padding:10px;
+  margin:10px 10px; 
+  border: 0;
+  box-shadow:0 0 15px 8px rgba(0,0,0,0.06);
+}
+
+
+input[type=verifyPassword] {
+  padding:10px;
+  margin:10px 10px; 
+  border: 0;
+  box-shadow:0 0 15px 8px rgba(0,0,0,0.06);
+}
+
+
 
 
 /* 

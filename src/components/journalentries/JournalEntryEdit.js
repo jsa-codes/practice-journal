@@ -21,17 +21,6 @@ export const JournalEntryEdit = () => {
   });
 
 
-  // FEEDBACK SLIDE IN ------------------------------
-  const [feedback, setFeedback] = useState('');
-
-  useEffect(() => {
-    if (feedback !== '') {
-      // Clear feedback to make entire element disappear after 3 seconds
-      setTimeout(() => setFeedback(''), 3000);
-    }
-  }, [feedback]);
-  // ------------------------------------------------------
-
 
   useEffect(
     () => {
@@ -87,12 +76,7 @@ export const JournalEntryEdit = () => {
 
   return (
     <>
-      <div
-        className={`${feedback.includes('Error') ? 'error' : 'feedback'} ${feedback === '' ? 'invisible' : 'visible'
-          }`}
-      >
-        {feedback}
-      </div>
+      
 
 
       <form className='journalEntryForm'>
@@ -100,7 +84,7 @@ export const JournalEntryEdit = () => {
 
         <fieldset>
           <div className='form-group'>
-            <label htmlFor='hoursSlept'>Hours Slept</label>
+            <label htmlFor='hours_slept'>Hours Slept</label>
             <input
               type='number'
               className='form-control'

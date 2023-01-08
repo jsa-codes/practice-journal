@@ -4,7 +4,7 @@
 
 .form--header {
     padding-top: 0;
-    margin-top: 0;
+    margin-top: 2rem;
 }
 
 .form__section {
@@ -20,7 +20,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1.6rem;
+    padding-top: 2rem;
     /* border: 1px solid #a2a2a2; */
     border-radius: 4px;
     box-shadow: 0 0 15px #d7d6d6;
@@ -35,6 +35,10 @@
     justify-content: center;
     align-items: center;
     padding: 1.6rem;
+}
+
+.button--fieldset {
+  margin-bottom: 1.6rem;
 }
 
 .form-control {
@@ -54,6 +58,50 @@
     flex-basis: 20%;
     list-style-type: none;
     color: tomato;
+}
+
+input[type=text] {
+  padding:10px;
+  margin:10px 10px; 
+  border: 0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+input[type=number] {
+  padding:10px;
+  margin:10px 10px; 
+  border: 0;
+  box-shadow:0 0 15px 8px rgba(0,0,0,0.06);
+}
+
+
+input[type=username] {
+  padding:10px;
+  margin:10px 10px; 
+  border: 0;
+  box-shadow:0 0 15px 8px rgba(0,0,0,0.06);
+}
+
+input[type=email] {
+  padding:10px;
+  margin:10px 10px; 
+  border: 0;
+  box-shadow:0 0 15px 8px rgba(0,0,0,0.06);
+}
+
+input[type=password] {
+  padding:10px;
+  margin:10px 10px; 
+  border: 0;
+  box-shadow:0 0 15px 8px rgba(0,0,0,0.06);
+}
+
+
+input[type=verifyPassword] {
+  padding:10px;
+  margin:10px 10px; 
+  border: 0;
+  box-shadow:0 0 15px 8px rgba(0,0,0,0.06);
 }
 
 
@@ -79,6 +127,8 @@
 
 .button-52:after {
   content: "";
+  background-color: #000;
+  width: 100%;
   background-color: #ffe54c;
   color: #ffe54c;
   width: 100%;
