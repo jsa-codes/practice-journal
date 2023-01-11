@@ -19,20 +19,14 @@
     justify-content: center;
     align-items: center;
     padding: 1.6rem;
-    /* border: 1px solid #a2a2a2; */
     border-radius: 4px;
-    box-shadow: 0 0 15px #d7d6d6;
+    /* box-shadow: 0 0 15px #d7d6d6; */
+    box-shadow: 0 16px 24px 8px rgb(0 0 0 / 20%);
     margin-bottom: 1.6rem;
     margin-top: 2rem;
     max-width: 700px;
 }
 
-.journalEntry__section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
 .journalEntry header {
     color: tomato;

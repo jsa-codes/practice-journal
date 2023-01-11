@@ -45,7 +45,8 @@ export const Login = () => {
         <form className="form--login" onSubmit={handleLogin}>
           <h1 className='form--header'>Practice Journal</h1>
           <h2>Please sign in</h2>
-          <h3>Music is a journey. So, why not start treating it like one?</h3>
+          <h3><i>Music is a journey.</i></h3>
+          <h3><i>So, why not start treating it like one?</i></h3>
 
           <fieldset className='form--fieldset'>
             <label htmlFor="inputUsername"></label>

@@ -29,6 +29,19 @@
     max-width: 700px;
 }
 
+.form--login h1 {
+    margin-bottom: 1.6rem;
+}
+
+.form--login h2 {
+  margin-top: .6rem;
+  margin-bottom: 3rem;
+}
+
+.form--login h3 {
+    text-decoration: none;
+}
+
 .form--fieldset {
     display: flex;
     flex-direction: column;
@@ -138,6 +151,8 @@ input[type=verifyPassword] {
   top: 7px;
   left: 7px;
   transition: 0.2s;
+  box-shadow: 0 16px 24px 8px rgb(0 0 0 / 20%);
+  
 }
 
 .button-52:hover:after {

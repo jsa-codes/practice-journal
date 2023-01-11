@@ -62,8 +62,6 @@ export const JournalEntryForm = () => {
       .then(() => {
         navigate("/journalEntries");
       });
-
-
   }
 
   return (

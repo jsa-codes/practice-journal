@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getJournalEntryById } from '../managers/JournalEntryManager'
-import './JournalEntry.css'
+import './JournalEntryDetails.css'
 
 export const JournalEntryDetails = () => {
 
@@ -21,10 +21,10 @@ export const JournalEntryDetails = () => {
 
     return (<>
         <h2>Journal Entry Details</h2>
-        <section className='journalEntry__section'>
-            <div className='card'>
+        <section className='entry__section'>
+            <div className='entry-details--card'>
                 <div className="journalEntry">
-                    <header className='journalEntry'>Journal Entry {journalEntry.id}</header>
+                    <header className='journalEntry__header'>Journal Entry {journalEntry.id}</header>
                     <h4>Date: {journalEntry.date}</h4>
                     <h4>Time: {journalEntry.time}</h4>
                     <h4>Hours Slept: {journalEntry.hours_slept}</h4>

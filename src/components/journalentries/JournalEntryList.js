@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getAllJournalEntries } from '../managers/JournalEntryManager'
 import { JournalEntry } from './JournalEntry'
+import './JournalEntryList.css'
 
 export const JournalEntryList = () => {
 

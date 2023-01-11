@@ -7,6 +7,8 @@
   flex-direction: column; 
   justify-content: center;
   align-items: center;
+  margin-bottom:3rem;
+
 }
 
 .profile {
@@ -16,7 +18,10 @@
     align-items: center;
     width: 100%;
     height: 100%;
+}
 
+.entry__title {
+  margin-top:0;
 }
 
 .form-group {
@@ -26,7 +31,6 @@
 
 .form-control {
     font-weight: normal;
-
 }
 
 input[type=text] {
@@ -52,8 +56,3 @@ input[type=time] {
 }
 
 
-
-/* <!-- HTML !-->
-<button class="button-52" role="button">Button 52</button> */
-
-/* CSS */

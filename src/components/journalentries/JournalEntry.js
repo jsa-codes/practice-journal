@@ -8,7 +8,7 @@ export const JournalEntry = ({ id, description, date, time, getEntries }) => {
 
 
   return (
-    <section className='journalEntry__section' key={`journalEntry--${id}`}>
+    <section className='' key={`journalEntry--${id}`}>
       <div className='card'>
         <div className="journalEntry">
           <h3>Journal Entry {id}</h3>

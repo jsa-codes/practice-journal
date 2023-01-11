@@ -69,7 +69,7 @@ export const InstructorProfileForm = () => {
 
         // Object being passed in from the updatedStudent object above
         updateInstructor(updatedInstructor).then(alert("Your Profile has been updated!"))
-        .then(navigate('/'))
+            .then(navigate('/'))
     };
 
     return (
@@ -110,14 +110,13 @@ export const InstructorProfileForm = () => {
                 <fieldset>
                     <div className='form-group'>
                         <label htmlFor='bio'>Bio</label>
-                        <input
-                            type='text'
+                        <textarea rows={30} cols={50}
+                            type='textarea'
                             className='form-control'
                             value={profile.bio}
                             name='bio'
                             placeholder='Tell us a little about yourself'
                             onChange={handleChange} />
-
                     </div>
                 </fieldset>
                 <fieldset>

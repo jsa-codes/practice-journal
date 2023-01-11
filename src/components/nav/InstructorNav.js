@@ -22,7 +22,7 @@ export const InstructorNav = () => {
                 {
                     (localStorage.getItem("pj_token") !== null) ?
                         <li className="nav-item">
-                            <button className="button-52 btn-logout nav-link"
+                            <button className="btn-logout nav-link"
                                 onClick={() => {
                                     localStorage.removeItem("pj_token")
                                     navigate('/login')

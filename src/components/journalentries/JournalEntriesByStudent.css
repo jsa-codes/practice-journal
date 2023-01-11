@@ -1,0 +1,41 @@
+
+
+.entryByStudent__section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1.6rem 0;
+    margin-bottom:2rem;
+    border-radius: 4px;
+    box-shadow: 0 0 15px #d7d6d6;
+    max-width: 600px
+}
+
+.entries {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.6rem 0;
+    align-items: center;
+    margin-bottom:2rem;
+    border-radius: 4px;
+    padding: 1.6rem 0;
+}
+
+.card {
+    padding: 1.6rem 1.6rem;
+}
+
+h3 {
+    margin: .5rem;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+h4 {
+    font-weight: bold;
+    padding: .5rem;
+    margin:0;
+
+}

@@ -24,7 +24,7 @@ export const StudentDetails = () => {
     return (
         <div className='students'>
             <section className='student__section' key={`student--${student.id}`}>
-                <div className='card'>
+                <div className='student-details--card'>
                     <img className="thumbnail" src="https://images.equipboard.com/uploads/user/image/3382/big_jimi-hendrix.jpg" alt="" />
                     <div className='profile'>
                         <h3>Name: {student.full_name}</h3>

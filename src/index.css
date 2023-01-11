@@ -48,6 +48,8 @@ code {
   top: 7px;
   left: 7px;
   transition: 0.2s;
+  box-shadow: 0 16px 24px 8px rgb(0 0 0 / 20%);
+
 }
 
 .btn-delete:hover:after {
@@ -95,6 +97,8 @@ code {
   top: 7px;
   left: 7px;
   transition: 0.2s;
+  box-shadow: 0 16px 24px 8px rgb(0 0 0 / 20%);
+
 }
 
 .btn-respond:hover:after {
@@ -117,7 +121,7 @@ code {
   font-weight: 200;
   height: 3rem;
   letter-spacing: 1px;
-  padding: .5rem .5rem;
+  padding: .5rem;
   margin: 1rem 1rem;
   outline: 0;
   border: 1px solid black;
@@ -142,6 +146,8 @@ code {
   top: 7px;
   left: 7px;
   transition: 0.2s;
+  box-shadow: 0 16px 24px 8px rgb(0 0 0 / 20%);
+
 }
 
 .btn-logout:hover:after {
@@ -174,6 +180,7 @@ code {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+
 }
 
 .btn-submit:after {
@@ -189,6 +196,8 @@ code {
   top: 7px;
   left: 7px;
   transition: 0.2s;
+  box-shadow: 0 16px 24px 8px rgb(0 0 0 / 20%);
+
 }
 
 .btn-submit:hover:after {
@@ -235,6 +244,8 @@ code {
   top: 7px;
   left: 7px;
   transition: 0.2s;
+  box-shadow: 0 16px 24px 8px rgb(0 0 0 / 20%);
+
 }
 
 .btn-save:hover:after {
@@ -282,6 +293,8 @@ code {
   top: 7px;
   left: 7px;
   transition: 0.2s;
+  box-shadow: 0 16px 24px 8px rgb(0 0 0 / 20%);
+
 }
 
 .btn-edit:hover:after {
@@ -329,6 +342,8 @@ code {
   top: 7px;
   left: 7px;
   transition: 0.2s;
+  box-shadow: 0 16px 24px 8px rgb(0 0 0 / 20%);
+
 }
 
 .btn-view:hover:after {
